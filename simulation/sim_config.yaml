@@ -1,0 +1,2 @@
+# This is sim_config.yaml
+print('Hello from qvo_prototype/simulation/sim_config.yaml')

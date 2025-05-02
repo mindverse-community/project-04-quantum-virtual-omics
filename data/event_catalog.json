@@ -1,0 +1,2 @@
+# This is event_catalog.json
+print('Hello from qvo_prototype/data/event_catalog.json')

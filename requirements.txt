@@ -1,0 +1,2 @@
+# This is requirements.txt
+print('Hello from qvo_prototype/requirements.txt')
