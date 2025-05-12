@@ -1,130 +1,112 @@
+# 🧬 Quantum Virtual Omics (QVO) Project
 
-# 🧬 Quantum Virtual Omics (QVO)
+### *Using AI to Build AI*
 
-**Quantum Virtual Omics (QVO)** is a next-generation whole-cell modeling framework that represents the living cell as a **quantum graph**, where:
+A Multi-Agent Framework for Engineering the Digital Omics Simulation Platform
 
-- 📍 **Nodes** = discrete biological **events** (e.g., transcription bursts, calcium spikes, chromatin remodeling)
-- 🔗 **Edges** = **phase relationships** that encode coherence, delay, or interference
-- 🎼 **Pathways** = emergent **harmonic modes** of the quantum graph
-- 🧠 **Cellular health** = defined by **synchronization and phase coherence**
-- 🚨 **Disease and dysfunction** = modeled as **decoherence, bifurcation, or harmonic collapse**
+## 🌐 Project Overview
 
----
+The QVO platform models dynamic omics processes as perturbation trajectories on quantum graphs. The system is being constructed not by hand, but by a recursive network of AI agents writing, testing, and refining every component of the architecture autonomously.
 
-## 📐 Project Objectives
+## 🧱 Multi-Agent Development Architecture
 
-- Simulate the evolution of a **quantum event wavefunction** over a biological graph
-- Construct and monitor a **Health State Tensor (MST)** representing cellular state
-- Explore **phase transitions**, **pathway resonance**, and **attractor landscapes**
-- Build a modular, extensible architecture for future integration with real omics data
+| Layer | Role                         | Description                                     |
+|-------|------------------------------|-------------------------------------------------|
+| 0     | AI Architect                 | Vision, meta-prompts, component ontology       |
+| 1     | Coordinator Agent            | Module breakdown, dependencies, task assignment |
+| 2     | Promoter Agents              | Write module specifications                    |
+| 3     | Prompter Agents              | Generate structured prompts                    |
+| 4     | Coder Agents                 | Code modules from prompts                      |
+| 5     | Evaluation & Feedback Agents | Test, score, refine modules                    |
 
----
+## 🔄 Recursive Feedback Workflow
+
+```mermaid
+graph TD
+
+A[AI Architect] --> B[Vision Doc]
+A --> C[Meta-Prompt Registry]
+
+B --> D[Coordinator Agent]
+C --> D
+
+D --> E1[Module Plan: QuantumGraphConstructor]
+D --> E2[Module Plan: OmicsDataExporter]
+
+E1 --> F1[Promoter Agent A]
+E2 --> F2[Promoter Agent B]
+
+F1 --> G1[Instruction: quantum_graph_constructor.md]
+F2 --> G2[Instruction: omics_data_exporter.md]
+
+G1 --> H1[Prompter Agent A]
+G2 --> H2[Prompter Agent B]
+
+H1 --> I1[Prompt: quantum_graph_constructor_prompt.yaml]
+H2 --> I2[Prompt: omics_data_exporter_prompt.yaml]
+
+I1 --> J1[Coder Agent A]
+I2 --> J2[Coder Agent B]
+
+J1 --> K1[Code: quantum_graph_constructor.py]
+J2 --> K2[Code: omics_data_exporter.py]
+
+K1 --> L1[Evaluation Agent A]
+K2 --> L2[Evaluation Agent B]
+
+L1 --> M1[Test Report A]
+L2 --> M2[Test Report B]
+
+M1 --> H1
+M2 --> H2
+```
 
 ## 📁 Folder Structure
 
 ```
+qvo_project/
+├── architect/
+│   ├── qvo_vision_doc.md
+│   ├── design_manifest.yaml
+│   └── meta_prompt_registry.json
+├── coordinator/
+│   ├── component_plan.yaml
+│   ├── workflow_map.svg
+│   └── agent_assignment.json
+├── promoters/
+│   └── instructions/
+│       ├── quantum_graph_constructor.md
+│       └── pathway_template_loader.md
+├── prompters/
+│   └── prompts/
+│       ├── quantum_graph_constructor_prompt.yaml
+│       └── omics_data_exporter_prompt.yaml
+├── coders/
+│   └── src/qvo/
+│       ├── quantum_graph_constructor.py
+│       ├── omics_data_exporter.py
+│       └── code_trace_log.json
+├── evaluators/
+│   └── tests/
+│       └── test_quantum_graph_constructor.py
+├── feedback/
+│   ├── refactor_pathway_template_loader.md
+│   └── evaluation_report.md
+├── shared_memory/
+│   └── chroma_vector_store/
+└── README.md
+```
 
-qvo\_prototype/
-├── core/                  # Core graph, Hamiltonian, wavefunction modules
-├── data/                  # Event and phase map data inputs
-│   └── biomarker\_profiles/ # Sample omics data profiles
-├── simulation/            # Runner scripts, configs, perturbation modules
-├── visualization/         # Plotting tools and interactive dashboards
-├── notebooks/             # Exploratory Jupyter notebooks
-├── utils/                 # Math helpers, signal processing, metrics
-├── tests/                 # Unit and integration test scripts
-├── docs/                  # Theoretical and usage documentation
-├── requirements.txt       # Python package dependencies
-└── main.py                # Entry point for full simulation
+## ⚙️ Toolchain and Stack
 
-````
+| Purpose              | Tools                                   |
+|----------------------|------------------------------------------|
+| Prompting            | LangChain, LangGraph                     |
+| Code Generation      | GPT-4, Codex                             |
+| Simulation Logic     | NumPy, SciPy, Qiskit                     |
+| Evaluation & Logging | LangSmith, Phoenix                       |
+| Vector Memory        | ChromaDB, FAISS                          |
 
----
+## 🚀 Why QVO Matters
 
-## 🧠 Core Concepts
-
-| Concept | Description |
-|--------|-------------|
-| `EventNode` | Represents a biological event as a complex-valued quantum node |
-| `PhaseEdge` | Encodes phase lag and coherence strength between two events |
-| `QuantumGraph` | Connects nodes and drives state evolution via a Hamiltonian |
-| `Ψ(t)` | The wavefunction of the cell over event space |
-| `MST(t)` | Multi-dimensional tensor monitoring cellular health and phase dynamics |
-| `Attractors` | Stable harmonic modes corresponding to cell states (homeostasis, apoptosis, senescence, etc.) |
-
----
-
-## 🚀 Quickstart
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/qvo_prototype.git
-cd qvo_prototype
-
-# 2. Create a virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Run a basic simulation
-python main.py
-````
-
----
-
-## 🧪 Key Dependencies
-
-* `numpy`, `scipy` — linear algebra, ODE solvers
-* `networkx` — quantum graph topology
-* `matplotlib`, `plotly` — visualization
-* `jax` or `torch` — GPU acceleration (optional)
-* `streamlit` or `dash` — interactive dashboard (optional)
-
----
-
-## 📊 Example Visualizations
-
-* Wavefunction amplitude over time
-* MST tensor heatmaps (health coherence)
-* Quantum graph with phase-encoded edge weights
-* Attractor transitions and bifurcation maps
-
----
-
-## 🧬 Applications
-
-* Simulate **cellular fate dynamics** (apoptosis, division, senescence)
-* Track **harmonic biomarkers** via MST evolution
-* Test **drug-like perturbations** as phase re-aligners
-* Explore disease as **graph decoherence or attractor collapse**
-* Integrate omics data to construct **personalized QVO graphs**
-
----
-
-## 📚 References
-
-* Wang et al. “Potential landscape and biological paths for development and differentiation” (PNAS, 2011)
-* Karr et al. “A whole-cell computational model predicts phenotype from genotype” (Cell, 2012)
-* Quantum Graph Theory in Systems Biology – various reviews
-
----
-
-## 👨‍💻 Author
-
-**Dibakar Sigdel**
-Project Lead – Quantum Biology, Graph Intelligence, Whole-Cell Systems Modeling
-
----
-
-## 📃 License
-
-This project is licensed under the MIT License.
-See [LICENSE](docs/LICENSE) for details.
-
----
-
-> *“The cell is a living wavefunction. Disease is decoherence. Healing is harmonic realignment.”*
-
-
+This repository showcases a fully autonomous software development stack — where AI agents design, implement, test, and evolve the core components of an omics simulation engine. QVO is a pioneering step in quantum-biological simulation — not just in what it does, but in how it’s being built.
